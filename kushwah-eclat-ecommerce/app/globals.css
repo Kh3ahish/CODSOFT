@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 28, 28, 28;
+  --background-start-rgb: 252, 252, 252;
+  --background-end-rgb: 255, 255, 255;
+  --gold: 180, 145, 80;
+  --cream: 251, 248, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.elegant-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.elegant-hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(var(--gold));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.elegant-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.luxury-shadow {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.golden-gradient {
+  background: linear-gradient(135deg, rgba(var(--gold), 0.1) 0%, rgba(var(--gold), 0.05) 100%);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-scale {
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.mega-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mega-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+.mega-menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mega-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+@layer utilities {
+  .mega-menu-item {
+    @apply relative overflow-hidden;
+  }
+
+  .mega-menu-item::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-px bg-primary scale-x-0 transition-transform duration-200 origin-left;
+  }
+
+  .mega-menu-item:hover::after {
+    @apply scale-x-100;
+  }
+
+  .collections-menu-item {
+    @apply relative overflow-hidden;
+  }
+
+  .collections-menu-item::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-px bg-primary scale-x-0 transition-transform duration-200 origin-left;
+  }
+
+  .collections-menu-item:hover::after {
+    @apply scale-x-100;
+  }
+}
+

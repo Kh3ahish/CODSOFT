@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32">
+  <rect width="48" height="32" fill="#0066B3"/>
+  <path d="M8 8h32v16H8V8z" fill="#FFFFFF"/>
+  <path d="M12 12h24v8H12v-8z" fill="#ED1C24"/>
+  <text x="24" y="18" font-family="Arial, sans-serif" font-size="8" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">girocard</text>
+</svg>
+
